@@ -361,7 +361,11 @@ function counterMakerWithLimit(limit) {
   let count = 0;
 
   return function updateCounter(){
-    return count >= limit ? count = 0 : count++;
+    if(count > limit){
+      count = 0;
+    }
+    
+    return count++;
   }
 }
 
