@@ -304,10 +304,19 @@ function tallyUpDonations(runners) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * A. counter1 returns a function that can be reused to continually increment the counter without having to declare the counter outside of the function.
+ *    counter2 returns the incremeneted count.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * A. counter1 uses a closure. it returns a function that can then be passed into a variable and reused.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * A. counter1 would be useful in the case where you only need to access the count from the function.
+ *    counter2 would be useful if you need access to the variable elsewhere in the code.
+ * 
+ * - Thank you to Pace for the help with understanding this better!
 */
 
 // counter1 code
@@ -348,8 +357,12 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  let count = 0;
+
+  return function updateCounter(){
+    return count >= limit ? count = 0 : count++;
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
