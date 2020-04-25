@@ -133,8 +133,6 @@ function processProduct(num1, num2, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-  const newArray = [];
-
   return callback(list.filter((item, index) => { return item !== list[index - 1]}));
 }
 
@@ -157,8 +155,8 @@ function processDuplicateFree(list, callback) {
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+function lowerCaseStrings(strings) {
+  strings.forEach((str, idx) => { return string.toLowerCase(); })
 }
 
 /**
@@ -176,8 +174,8 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  return strings.map((item) => { return item === 'apple' ? true : false });
 }
 
 /**
