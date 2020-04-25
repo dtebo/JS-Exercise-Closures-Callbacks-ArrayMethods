@@ -257,7 +257,7 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  return runners.map((item) => { return item.first_name.replace(/[a-zA-Z]/, l => l.toUpperCase()); });
+  return runners.map((item) => { return item.first_name.toUpperCase(); });
 }
 
 /**
